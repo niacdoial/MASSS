@@ -1,0 +1,4 @@
+.\vlc-windows\vlc.exe
+.\vlc_windows
+# change this path to your local vlc installation if you feel so.
+# just be sure the third line exists, even if empty

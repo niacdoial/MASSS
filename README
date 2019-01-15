@@ -1,46 +1,53 @@
-ASSS - Arnold Schmürz Sound System
+MASSS - Multiplatform ASSS
+Based on ASSS - Arnold Schmürz Sound System
 
 Organize your sound files in directories and sub-directories, and then launch them by clicking on a button !
 
 
 -- Installation --
-The ASSS is aimed to be run on a Linux/GTK environment. It uses Mplayer as a backend for playing the files.
+The ASSS is aimed to be run on any Linux/windows environment. It uses vlc as a backend for playing the files.
 
 You need the following dependencies :
-* mplayer
-* python
-* python-gtk2
-* aumix (for the volume control)
+* vlc
+* python (>= 3.5)
+* tkinter (a UI system shipped with python)
 
 On Ubuntu/Debian environment, simply run:
-sudo apt-get install mplayer aumix python python-gtk2
+sudo apt-get install python3 vlc
 
-You can launch the ASSS by running the asss.sh script (./asss.sh from the command line, or double clicking the file). 
-If it does nothing, make it executable (chmod +x asss.sh).
+You can launch the MASSS by running the MASSS.{sh/bat} script (./MASSS.{sh/bat} from the command line, or double clicking the file).
+If it does nothing, try running 'sampler.py' directly (usually command line on linux, sumple double click on windows)
+If on linux, you should try making both files executable (chmod +x MASSS.sh for example).
 
 
---- How to use the ASSS --
+
+--- How to use the MASSS ---
+
+Before using it on windows, YOU WILL NEED TO UNZIP VLC, unless you want to use your own version of it.
+unzip it into the `./vlc-windows` directory (this name is hardcoded)
 
 In the folder containing the script, create a folder named 'sounds' (the name of that folder is hardcoded).
 
-In that folder, create folders for the main sound categories, and subfolders for sub-categories (all sound files need to be in subcategories).
+In that folder, create folders for the main sound categories, and subfolders for sub-categories.
+all sound files (or links to sound files) need to be in one of those directories. **don't put anything else here, it will create bogus buttons**
 
-Each folder corresponds to a tab in the interface, and each subfolder to a column. 
+Each folder corresponds to a tab in the interface, and each subfolder to a 'boxed' frame.
 
-The ASSS will read pretty much anything (all that mplayer can play), which includes videos (that will open a window containing the video).
+The ASSS will read pretty much anything (all that vlc can play), which includes videos (that will open a window containing the video).
 
-A click on a button launches a sound, another click stops it. You can launch as many sounds as you wish simultaneously.
+A click on a button launches a sound, another click stops it. You can launch as many sounds as you wish simultaneously. crap!
 
-There is an 8 band equalizer (and a reinitializing button), which has to be set before a sound is launched.
+There is an 10 band equalizer, which has to be set before a sound is launched.
+*TODO* does it really work, though?
 
-The volume control is active while playing sounds.
+There is also a master volume control, and a volume multiplier for each file.
+both are active while playing sounds.
 
-You can skip intros (useful for songs). You can either change the filename. Adding #25 at the end of the filename (before the extension) will skip the first 2.5 seconds. You can also specify an amount to skip in the lower right corner of the interface (the checkbox enables or disables the override).
+You can skip intros (useful for songs). You can either change the filename. Adding #25 at the end of the filename (before the extension) will skip the first 2.5 seconds. You can also specify an amount (*in seconds*) to skip in the lower right corner of the interface (the checkbox enables or disables the override).
+(*TODO*: for now, only entire seconds can be skipped, and this functionnality's accuracy cannot be trusted for some reason)
 
-
+***WINDOW USERS***
+while the MASSS works, it is far from parfect here: it will run as the topmost window, and the occasionnal window will close/pop-up underneath. those are the vlc program instances. DO NOT CLOSE THEM.
 
 
 Have fun !
-
-
-Released under the MIT license

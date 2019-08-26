@@ -1,1 +1,1 @@
-pyw -3 %CD%\samplertk.py
+py -3 %CD%\MASSS.py

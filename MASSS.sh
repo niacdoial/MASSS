@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python3 samplertk.py
+python3 MASSS.py
